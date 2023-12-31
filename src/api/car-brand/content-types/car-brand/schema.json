@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "car_brands",
+  "info": {
+    "singularName": "car-brand",
+    "pluralName": "car-brands",
+    "displayName": "Car Brands"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "brandLogo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "car_models": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::car-model.car-model",
+      "mappedBy": "car_brands"
+    },
+    "car_trims": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::car-trim.car-trim",
+      "mappedBy": "car_brands"
+    },
+    "brand_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::brand-section.brand-section",
+      "inversedBy": "car_brands"
+    }
+  }
+}

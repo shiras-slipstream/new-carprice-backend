@@ -1,0 +1,266 @@
+{
+  "kind": "collectionType",
+  "collectionName": "car_trims",
+  "info": {
+    "singularName": "car-trim",
+    "pluralName": "car-trims",
+    "displayName": "Car Trims",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "metaTitle": {
+      "type": "text"
+    },
+    "mainSlug": {
+      "type": "text"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "car_brands": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::car-brand.car-brand",
+      "inversedBy": "car_trims"
+    },
+    "car_models": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::car-model.car-model",
+      "inversedBy": "car_trims"
+    },
+    "year": {
+      "type": "float",
+      "required": true
+    },
+    "price": {
+      "type": "float"
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "engine": {
+      "type": "string"
+    },
+    "power": {
+      "type": "float"
+    },
+    "torque": {
+      "type": "string"
+    },
+    "transmission": {
+      "type": "string"
+    },
+    "gearBox": {
+      "type": "string"
+    },
+    "drive": {
+      "type": "string"
+    },
+    "fuelType": {
+      "type": "string"
+    },
+    "motor": {
+      "type": "string"
+    },
+    "motorType": {
+      "type": "string"
+    },
+    "batteryCapacity": {
+      "type": "string"
+    },
+    "chargingTime": {
+      "type": "string"
+    },
+    "batteryWarranty": {
+      "type": "string"
+    },
+    "range": {
+      "type": "float"
+    },
+    "zeroToHundred": {
+      "type": "float"
+    },
+    "topSpeed": {
+      "type": "float"
+    },
+    "fuelConsumption": {
+      "type": "float"
+    },
+    "cylinders": {
+      "type": "string"
+    },
+    "haveABS": {
+      "type": "boolean"
+    },
+    "haveFrontAirbags": {
+      "type": "boolean"
+    },
+    "haveSideAirbags": {
+      "type": "boolean"
+    },
+    "haveRearAirbags": {
+      "type": "boolean"
+    },
+    "haveFrontParkAssist": {
+      "type": "boolean"
+    },
+    "haveRearParkAssist": {
+      "type": "boolean"
+    },
+    "haveRearParkingCamera": {
+      "type": "boolean"
+    },
+    "have360ParkingCamera": {
+      "type": "boolean"
+    },
+    "haveCruiseControl": {
+      "type": "boolean"
+    },
+    "haveAdaptiveCruiseControl": {
+      "type": "boolean"
+    },
+    "haveLaneChangeAssist": {
+      "type": "boolean"
+    },
+    "car_body_types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::car-body-type.car-body-type",
+      "inversedBy": "car_trims"
+    },
+    "airbags": {
+      "type": "float"
+    },
+    "doors": {
+      "type": "float"
+    },
+    "frontBrakes": {
+      "type": "string"
+    },
+    "rearBrakes": {
+      "type": "string"
+    },
+    "length": {
+      "type": "float"
+    },
+    "width": {
+      "type": "float"
+    },
+    "height": {
+      "type": "float"
+    },
+    "wheelbase": {
+      "type": "float"
+    },
+    "weight": {
+      "type": "float"
+    },
+    "wheels": {
+      "type": "string"
+    },
+    "tyresFront": {
+      "type": "string"
+    },
+    "tyresRear": {
+      "type": "string"
+    },
+    "seatingCapacity": {
+      "type": "string"
+    },
+    "haveLeatherInterior": {
+      "type": "boolean"
+    },
+    "haveFabricInterior": {
+      "type": "boolean"
+    },
+    "haveAppleCarPlay": {
+      "type": "boolean"
+    },
+    "haveAndroidAuto": {
+      "type": "boolean"
+    },
+    "haveRearSeatEntertainment": {
+      "type": "boolean"
+    },
+    "haveCooledSeats": {
+      "type": "boolean"
+    },
+    "haveClimateControl": {
+      "type": "boolean"
+    },
+    "isLuxury": {
+      "type": "boolean"
+    },
+    "isPremiumLuxury": {
+      "type": "boolean"
+    },
+    "isSafety": {
+      "type": "boolean"
+    },
+    "isFuelEfficient": {
+      "type": "boolean"
+    },
+    "isOffRoad": {
+      "type": "boolean"
+    },
+    "haveMusic": {
+      "type": "boolean"
+    },
+    "haveTechnology": {
+      "type": "boolean"
+    },
+    "havePerformance": {
+      "type": "boolean"
+    },
+    "isSpacious": {
+      "type": "boolean"
+    },
+    "isElectric": {
+      "type": "boolean"
+    },
+    "isDiscontinued": {
+      "type": "boolean"
+    },
+    "gallery_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string"
+    },
+    "fuelTankSize": {
+      "type": "string"
+    },
+    "cargoSpace": {
+      "type": "string"
+    },
+    "highTrim": {
+      "type": "boolean"
+    },
+    "displacement": {
+      "type": "float"
+    }
+  }
+}
